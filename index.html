@@ -50,7 +50,7 @@
   
     
 <div id="banner" class=" is_home ">
-  <img src="/assets/SkyPlatform.png" itemprop="image">
+  <img src="/image/SkyPlatform.png" itemprop="image">
   <div id="banner-dim"></div>
 </div>
  
@@ -122,7 +122,7 @@
   <div class="info-card">
     <div class="avatar">
       
-        <image src=/assets/%E3%81%BF%E3%81%A4%E3%82%81%E3%82%8B.jpg></image>
+        <image src=/image/%E3%81%BF%E3%81%A4%E3%82%81%E3%82%8B.jpg></image>
       
       <div class="img-dim"></div>
     </div>
@@ -145,9 +145,23 @@
       
 
 
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box"></div>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Game-Dev/" rel="tag">Game Dev</a></li></ul>
+    </div>
+  </div>
+
 
     
       
@@ -166,23 +180,6 @@
 
 
     
-      
-  <div class="widget-wrap">
-    <div class="widget">
-      <h3 class="widget-title">Recent Posts</h3>
-      <ul>
-        
-          <a class="recent-link" href="/2023/12/05/hello-world/" title="Hello World" >
-            <div class="recent-link-text">
-              Hello World
-            </div>
-          </a>
-        
-      </ul>
-    </div>
-  </div>
-
-    
   </div>
 </sidebar>
     </div>
@@ -190,7 +187,7 @@
       
    
 
-<article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-CrossRoad开发技术笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -201,7 +198,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/12/05/hello-world/">Hello World</a>
+        <a class="p-name article-title" href="/2023/12/09/CrossRoad%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">CrossRoad开发技术笔记</a>
       </h1>
     
   
@@ -209,39 +206,34 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-12-05T14:51:37.248Z" itemprop="datePublished">2023-12-05</time>
+  <time class="dt-published" datetime="2023-12-09T13:37:18.000Z" itemprop="datePublished">2023-12-09</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    Uncategorized 
+  <a class="meta-cate-link" href="/categories/Unity/">Unity</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            78 words 
+            1.8k words 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Dev/" rel="tag">Game Dev</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+            结合Michael老师在B站上的课程《Unity休闲手机游戏开发》，开发了一款简单的竖屏小游戏，并命名为CrossRoad。以此项目为契机，实现熟悉unity相关操作，了解游戏开发流程等目标。在这篇博客中，将一些在开发中遇到的一些困难点、运用到的技术点记录下来，以便日后回顾。
 
-More info: Writing
-Run server1$ hexo server
+项目仓库：CrossRoad
+玩法： 在这个游戏中，我们通过点按&#x2F;长按屏幕控制青蛙向前跳跃、根据点按位置控制青蛙左右移动。在游戏场景中，有公路、草地和小河三种场景。在公路场景中，会有移动的车辆；在草地场景中，会有障碍物（栅栏、石墙）；在小河场景中，会有移动的木板。当青蛙碰撞到汽车、栅栏、石墙，亦或是穿越小河时，掉入水中，都会判定失败。
 
-More info: Server
-Generate static files1$ hexo generate
 
-More info: Generating
-Deploy to remote sites1$ hexo deploy
-
-More info: Deployment
-  
+设置相机由于这是一款2D竖版游戏，所以我希望整个游戏的渲染能以Y轴的坐标为标准，即当两个模型发现重叠时，Y轴越小显示在前面，Y轴越大的显示在后面。因此，在菜单栏中选择Edit-&gt;Project Settings中，选择Graphics，将Carema Settings中的Transparency Sort Mode（透明排序模式）设置为Custom Ax...  
           </div>
         
       </div>
@@ -252,7 +244,7 @@ More info: Deployment
      
     <a class="right-panel  non-pic  "
       
-      href="/2023/12/05/hello-world/" 
+      href="/2023/12/09/CrossRoad%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
