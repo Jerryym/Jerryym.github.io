@@ -2,9 +2,9 @@
 
 
 <html theme="dark" showBanner="true" hasBanner="true" > 
-<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
-<link href="/fontawesome/css/brands.css" rel="stylesheet">
-<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
 <script src="/js/color.global.min.js" ></script>
 <script src="/js/load-settings.js" ></script>
 <head>
@@ -41,6 +41,7 @@
     <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
   
   
+  
 <link rel="stylesheet" href="/css/style.css">
 
 <meta name="generator" content="Hexo 7.0.0"></head>
@@ -55,7 +56,7 @@
 </div>
  
    
-  <div id="main-grid" class="shadow   ">
+  <div id="main-grid" class="  ">
     <div id="nav" class=" is_home "  >
       <navbar id="navbar">
   <nav id="title-nav">
@@ -149,10 +150,16 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/">
-                Unity</a>
-            <a class="category-link" href="/">
-                Java</a></div>
+            <a class="category-link" href="/categories/Unity/">
+                Unity
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Java/">
+                Java
+                <div class="category-count">1</div>
+            </a>
+        </div>
     </div>
   </div>
 
@@ -190,6 +197,7 @@
     <div id="content-body">
       
    
+
 
 <article id="post-network-chat-Swing项目环境配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -231,7 +239,8 @@
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            本项目是一个基于Java Swing开发的网络聊天&#x2F;即时通讯程序，整个项目会参考Cherno大佬的Network Chat Programming的系列视频进行开发。本项目的目标：熟悉Java语言、学会Java相关的GUI开发
+            
+              本项目是一个基于Java Swing开发的网络聊天&#x2F;即时通讯程序，整个项目会参考Cherno大佬的Network Chat Programming的系列视频进行开发。本项目的目标：熟悉Java语言、学会Java相关的GUI开发
 项目环境配置在本项目中，我使用vscode作为编辑器，因此需要在vscode上配置对应的Java开发环境来支持项目开发。
 JDK
 下载JDK链接：JDK下载基于我个人习惯，我习惯选择LTS版本的软件和SDK，因此我选择了17.0.9版本的JDK，并且开发的系统平台为Windows。
@@ -246,7 +255,8 @@ Maven for Java
 Project Manager for Java
 
 创建项目
-使用 CTRL+SHIFT+P输入 Java: creat...  
+使用 CTRL+SHIFT+P输入 Java: creat...
+            
           </div>
         
       </div>
@@ -268,9 +278,14 @@ Project Manager for Java
   
 </article>
 
- 
+
+
+
+
+
 
    
+
 
 <article id="post-CrossRoad开发技术笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -312,13 +327,15 @@ Project Manager for Java
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            结合Michael老师在B站上的课程《Unity休闲手机游戏开发》，开发了一款简单的竖屏小游戏，并命名为CrossRoad。以此项目为契机，实现熟悉unity相关操作，了解游戏开发流程等目标。在这篇博客中，将一些在开发中遇到的一些困难点、运用到的技术点记录下来，以便日后回顾。
+            
+              结合Michael老师在B站上的课程《Unity休闲手机游戏开发》，开发了一款简单的竖屏小游戏，并命名为CrossRoad。以此项目为契机，实现熟悉unity相关操作，了解游戏开发流程等目标。在这篇博客中，将一些在开发中遇到的一些困难点、运用到的技术点记录下来，以便日后回顾。
 
 项目仓库：CrossRoad
 玩法： 在这个游戏中，我们通过点按&#x2F;长按屏幕控制青蛙向前跳跃、根据点按位置控制青蛙左右移动。在游戏场景中，有公路、草地和小河三种场景。在公路场景中，会有移动的车辆；在草地场景中，会有障碍物（栅栏、石墙）；在小河场景中，会有移动的木板。当青蛙碰撞到汽车、栅栏、石墙，亦或是穿越小河时，掉入水中，都会判定失败。
 
 
-设置相机由于这是一款2D竖版游戏，所以我希望整个游戏的渲染能以Y轴的坐标为标准，即当两个模型发现重叠时，Y轴越小显示在前面，Y轴越大的显示在后面。因此，在菜单栏中选择Edit-&gt;Project Settings中，选择Graphics，将Carema Settings中的Transparency Sort Mode（透明排序模式）设置为Custom Ax...  
+设置相机由于这是一款2D竖版游戏，所以我希望整个游戏的渲染能以Y轴的坐标为标准，即当两个模型发现重叠时，Y轴越小显示在前面，Y轴越大的显示在后面。因此，在菜单栏中选择Edit-&gt;Project Settings中，选择Graphics，将Carema Settings中的Transparency Sort Mode（透明排序模式）设置为Custom Ax...
+            
           </div>
         
       </div>
@@ -340,7 +357,11 @@ Project Manager for Java
   
 </article>
 
- 
+
+
+
+
+
 
 
 
@@ -350,7 +371,7 @@ Project Manager for Java
   
   <div id="footer-info" class="inner">
     
-    &copy; 2023 _进击のJerry_<br>
+    &copy; 2024 _进击のJerry_<br>
     Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
   </div>
 </footer>
