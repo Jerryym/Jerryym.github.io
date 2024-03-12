@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://jerryym.github.io/image/EchoEngine/%E5%BC%95%E6%93%8E%E6%9E%B6%E6%9E%84.jpg">
 <meta property="og:image" content="https://jerryym.github.io/image/EchoEngine/EchoEngine%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1.png">
 <meta property="article:published_time" content="2024-03-10T13:02:14.000Z">
-<meta property="article:modified_time" content="2024-03-10T14:55:32.725Z">
+<meta property="article:modified_time" content="2024-03-12T15:27:58.317Z">
 <meta property="article:author" content="_进击のJerry_">
 <meta property="article:tag" content="Render Engine">
 <meta name="twitter:card" content="summary">
@@ -268,7 +268,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.2k words 
+            2.1k words 
           </div>
         </div>
         
@@ -354,18 +354,21 @@
 </li>
 </ul>
 <hr>
-<p>因此，EchoEngine作为一个渲染引擎项目，应参考通用的渲染引擎&#x2F;游戏引擎架构作为其软件架构，并结合Cherno大佬的设计思路，EchoEngine设计如下：</p>
-<ol>
-<li>Application Layer用于管理整个渲染引擎的应用程序</li>
-<li>Window Layer用于管理整个渲染引擎的图形化窗口界面</li>
-<li>对图形API进行抽象封装，向上层提供相关接口</li>
-<li>由于将优先实现对于<strong>OpenGL API</strong>的抽象封装，因此添加<strong>GLM</strong>作为数学运算库</li>
-<li>提供调试相关功能支持（e.g：断言（Asertion）、日志模块）</li>
-<li>实现内存管理系统和文件系统</li>
-<li>提供脚本系统，优先实现C#</li>
-<li>数据管理方法将使用成熟的<strong>ECS架构</strong></li>
-<li>物理系统将使用<strong>box2d</strong><br> <img src="/../../image/EchoEngine/EchoEngine%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1.png" alt="EchoEngine架构"></li>
-</ol>
+<p>因此，EchoEngine作为一个渲染引擎项目，应参考通用的渲染引擎&#x2F;游戏引擎架构作为其软件架构，并结合Cherno大佬的设计思路（如下图所示），EchoEngine设计如下：</p>
+<ul>
+<li>本项目是基于<strong>Qt6+GLFW+GLAD</strong>开发的。<ul>
+<li>由于Qt6提供强大的UI设计与交互，因此Qt6将作为渲染引擎中的UI。</li>
+<li>GLFW则用于管理渲染引擎中<strong>渲染上下文</strong>。</li>
+<li>GLAD将提供现代OpenGL的API。</li>
+</ul>
+</li>
+<li>将实现渲染引擎中Layer（层）机制</li>
+<li>抽象OpenGL API</li>
+<li>添加<strong>GLM库</strong>作为数学运算库</li>
+<li>接入脚本语言系统</li>
+<li>使用<strong>ENTT库</strong>实现<strong>ECS架构</strong>作为数据管理方法</li>
+<li>使用<strong>box2d库</strong>实现物理系统<br><img src="/../../image/EchoEngine/EchoEngine%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1.png" alt="EchoEngine架构"></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT">The Cherno Game Engine Series</a><br>[2] 《Game Engine Architecture, Second Edition》 Jason Gregory</p>
 
         
