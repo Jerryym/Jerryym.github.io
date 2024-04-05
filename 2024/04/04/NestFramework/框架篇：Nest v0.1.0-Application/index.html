@@ -20,16 +20,16 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="在平时使用应用程序时，我们经常会注意到应用在运行期间能够有效地管理资源，并在结束后进行适当的资源释放。这引发了我对于代码中是否存在一个类来管理应用程序资源的思考。在学习Qt开发时，我注意到每当涉及窗口程序时都会涉及到QApplication类。通过研究文档，我了解到QApplication类用于管理Qt应用程序，并提供相应的功能和职责。因此，在设计Nest框架时，我希望有一个类来管理程序运行时的所">
+  <meta name="description" content="在平时使用应用程序时，我们经常会注意到应用在运行期间能够有效地管理资源，并在结束后进行适当的资源释放。这引发了我对于代码中是否存在一个类来管理应用程序资源的思考。在学习Qt开发时，我注意到每当涉及窗口程序时都会涉及到 QApplication类。通过研究文档，我了解到 QApplication类用于管理Qt应用程序，并提供相应的功能和职责。因此，在设计Nest框架时，我希望有一个类来管理程序运行时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="框架篇：Nest v0.1.0-Application">
 <meta property="og:url" content="https://jerryym.github.io/2024/04/04/NestFramework/%E6%A1%86%E6%9E%B6%E7%AF%87%EF%BC%9ANest%20v0.1.0-Application/index.html">
 <meta property="og:site_name" content="Jerry&#39;s Nest">
-<meta property="og:description" content="在平时使用应用程序时，我们经常会注意到应用在运行期间能够有效地管理资源，并在结束后进行适当的资源释放。这引发了我对于代码中是否存在一个类来管理应用程序资源的思考。在学习Qt开发时，我注意到每当涉及窗口程序时都会涉及到QApplication类。通过研究文档，我了解到QApplication类用于管理Qt应用程序，并提供相应的功能和职责。因此，在设计Nest框架时，我希望有一个类来管理程序运行时的所">
+<meta property="og:description" content="在平时使用应用程序时，我们经常会注意到应用在运行期间能够有效地管理资源，并在结束后进行适当的资源释放。这引发了我对于代码中是否存在一个类来管理应用程序资源的思考。在学习Qt开发时，我注意到每当涉及窗口程序时都会涉及到 QApplication类。通过研究文档，我了解到 QApplication类用于管理Qt应用程序，并提供相应的功能和职责。因此，在设计Nest框架时，我希望有一个类来管理程序运行时">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jerryym.github.io/image/Nest%20Framework/QApplication.png">
 <meta property="article:published_time" content="2024-04-04T12:28:36.000Z">
-<meta property="article:modified_time" content="2024-04-04T14:49:58.605Z">
+<meta property="article:modified_time" content="2024-04-05T08:54:18.600Z">
 <meta property="article:author" content="_进击のJerry_">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="Qt">
@@ -160,7 +160,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/EchoEngine/">
                 EchoEngine
-                <div class="category-count">3</div>
+                <div class="category-count">4</div>
             </a>
         
             <a class="category-link" href="/categories/Game-Dev/">
@@ -175,7 +175,7 @@
         </div></div>
             <a class="category-link" href="/categories/Nest-Framework/">
                 Nest Framework
-                <div class="category-count">2</div>
+                <div class="category-count">3</div>
             </a>
         
             <a class="category-link" href="/categories/network-chat-NovaFlow/">
@@ -206,7 +206,7 @@
       
         <a class="archive-link" href="/archives/2024/04 ">
           April 2024 
-          <div class="archive-count">1 </div>
+          <div class="archive-count">2 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/03 ">
@@ -268,7 +268,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.9k words 
+            2.8k words 
           </div>
         </div>
         
@@ -277,7 +277,7 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>在平时使用应用程序时，我们经常会注意到应用在运行期间能够有效地管理资源，并在结束后进行适当的资源释放。这引发了我对于代码中是否存在一个类来管理应用程序资源的思考。在学习Qt开发时，我注意到每当涉及窗口程序时都会涉及到<code>QApplication</code>类。通过研究文档，我了解到<code>QApplication</code>类用于管理Qt应用程序，并提供相应的功能和职责。因此，在设计Nest框架时，我希望有一个类来管理程序运行时的所有应用相关资源。为此，我选择设计一个名为<code>Application</code>的类来实现这一需求。</p>
+          <p>在平时使用应用程序时，我们经常会注意到应用在运行期间能够有效地管理资源，并在结束后进行适当的资源释放。这引发了我对于代码中是否存在一个类来管理应用程序资源的思考。在学习Qt开发时，我注意到每当涉及窗口程序时都会涉及到 <code>QApplication</code>类。通过研究文档，我了解到 <code>QApplication</code>类用于管理Qt应用程序，并提供相应的功能和职责。因此，在设计Nest框架时，我希望有一个类来管理程序运行时的所有应用相关资源。为此，我选择设计一个名为 <code>Application</code>的类来实现这一需求。</p>
 <hr>
 <h3 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h3><ol>
 <li><p>由于整个框架是基于Qt框架的开发，在设计Application时应继承Qt中的相关Application类。</p>
@@ -285,13 +285,13 @@
 <li>在Qt中，一共有三种Application类：QCoreApplication、QGuiApplication和QApplication</li>
 <li>三者之间的关系如图所示<br><img src="/../../image/Nest%20Framework/QApplication.png" alt="QApplication关系"></li>
 <li>三者的区别<ul>
-<li><p><code>QCoreApplication</code>定义在<u><strong>core模块</strong></u>中，为应用程序提供了一个非gui的事件循环。</p>
+<li><p><code>QCoreApplication</code>定义在<strong>core模块</strong>中，为应用程序提供了一个非gui的事件循环。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QCoreApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QDebug&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QCoreApplication <span class="title">app</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> app.<span class="built_in">exec</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>QGuiApplication</code>定义在<u><strong>gui模块</strong></u>中，提供了额外的gui相关的设置，比如桌面设置，风格，字体，调色板，剪切板，光标等。</p>
+<li><p><code>QGuiApplication</code>定义在<strong>gui模块</strong>中，提供了额外的gui相关的设置，比如桌面设置，风格，字体，调色板，剪切板，光标等。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QGuiApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QGuiApplication <span class="title">app</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    <span class="function">QLabel <span class="title">label</span><span class="params">(<span class="string">&quot;Hello, World!&quot;</span>)</span></span>;</span><br><span class="line">    label.<span class="built_in">show</span>();</span><br><span class="line">    <span class="keyword">return</span> app.<span class="built_in">exec</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>QApplication</code>定义在<u><strong>widgets模块</strong></u>中，是QWidget相关的，能设置双击间隔，按键间隔，拖拽距离和时间，滚轮滚动行数等，能获取桌面，激活的窗口，模式控件，弹跳控件等。</p>
+<li><p><code>QApplication</code>定义在<strong>widgets模块</strong>中，是QWidget相关的，能设置双击间隔，按键间隔，拖拽距离和时间，滚轮滚动行数等，能获取桌面，激活的窗口，模式控件，弹跳控件等。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QGuiApplication&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QApplication <span class="title">app</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    <span class="function">QLabel <span class="title">label</span><span class="params">(<span class="string">&quot;Hello, World!&quot;</span>)</span></span>;</span><br><span class="line">    label.<span class="built_in">show</span>();</span><br><span class="line">    <span class="keyword">return</span> app.<span class="built_in">exec</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
@@ -299,23 +299,23 @@
 </li>
 <li><p>对于Application来说，我希望它能够在应用程序启动时都保证当且只有一个应用程序存在，因此使用<strong>单例模式</strong>来设计Application。</p>
 </li>
-<li><p>在类中，设计一个<code>bool</code>类型的变量用于控制应用程序运行状态，设置一个<code>QMainWindow</code>的指针用于管理应用程序主窗口。</p>
+<li><p>在类中，设计一个 <code>bool</code>类型的变量用于控制应用程序运行状态，设置一个 <code>QMainWindow</code>的指针用于管理应用程序主窗口。</p>
 </li>
 </ol>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
 <li><p>Application.h</p>
-  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// @brief 应用程序类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NEST_API</span> Application : <span class="keyword">public</span> QApplication</span><br><span class="line">&#123;</span><br><span class="line">    Q_OBJECT</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Application</span>(<span class="type">int</span>&amp; argc, <span class="type">char</span>** argv);</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Application</span>() &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/// @brief 运行应用程序</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Run</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/// @brief 设置主窗口</span></span><br><span class="line">    <span class="comment">/// @param pMainWindow </span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">SetMainWindow</span><span class="params">(QMainWindow* pMainWindow)</span></span>;</span><br><span class="line">    <span class="comment">/// @brief 获取主窗口</span></span><br><span class="line">    <span class="comment">/// @return 当前活动窗口指针</span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> QMainWindow* <span class="title">GetMainWindow</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> m_Window.<span class="built_in">get</span>(); &#125;</span><br><span class="line">    <span class="comment">/// @brief 获取当前应用程序</span></span><br><span class="line">    <span class="comment">/// @return </span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">static</span> Application&amp; <span class="title">GetApplication</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> *s_Instance; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/// @brief 应用程序单例: 程序运行时，当且只能一个应用程序存在</span></span><br><span class="line">    <span class="type">static</span> Application* s_Instance;</span><br><span class="line">    <span class="comment">/// @brief 运行状态的控制</span></span><br><span class="line">    <span class="type">bool</span> m_bRunning = <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">/// @brief 应用程序主窗口</span></span><br><span class="line">    std::unique_ptr&lt;QMainWindow&gt; m_Window;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// @brief 应用程序类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NEST_API</span> Application : <span class="keyword">public</span> QApplication</span><br><span class="line">&#123;</span><br><span class="line">    Q_OBJECT</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Application</span>(<span class="type">int</span>&amp; argc, <span class="type">char</span>** argv);</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Application</span>() &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/// @brief 运行应用程序</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Run</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">/// @brief 设置主窗口</span></span><br><span class="line">    <span class="comment">/// @param pMainWindow </span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">SetMainWindow</span><span class="params">(QMainWindow* pMainWindow)</span></span>;</span><br><span class="line">    <span class="comment">/// @brief 获取主窗口</span></span><br><span class="line">    <span class="comment">/// @return 当前活动窗口指针</span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> QMainWindow* <span class="title">GetMainWindow</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> m_Window.<span class="built_in">get</span>(); &#125;</span><br><span class="line">    <span class="comment">/// @brief 获取当前应用程序</span></span><br><span class="line">    <span class="comment">/// @return </span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">static</span> Application&amp; <span class="title">GetApplication</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> *s_Instance; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/// @brief 应用程序单例: 程序运行时，当且只能一个应用程序存在</span></span><br><span class="line">    <span class="type">static</span> Application* s_Instance;</span><br><span class="line">    <span class="comment">/// @brief 运行状态的控制</span></span><br><span class="line">    <span class="type">bool</span> m_bRunning = <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">/// @brief 应用程序主窗口</span></span><br><span class="line">    std::unique_ptr&lt;QMainWindow&gt; m_Window;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><code>Application</code>继承于Qt的<code>QApplication</code>，使其可以管理Qt的应用程序。</li>
-<li>使用宏<code>Q_OBJECT</code>，使得Qt的元对象系统支持<code>Application</code>，能够使用信号和槽机制。</li>
+<li><code>Application</code>继承于Qt的 <code>QApplication</code>，使其可以管理Qt的应用程序。</li>
+<li>使用宏 <code>Q_OBJECT</code>，使得Qt的元对象系统支持 <code>Application</code>，能够使用信号和槽机制。</li>
 <li><code>static Application* s_Instance</code>：使用单例模式，定义了一个应用程序单例 ，确保程序运行时，当且只有一个应用程序存在。</li>
 <li><code>std::unique_ptr&lt;QMainWindow&gt; m_Window</code>：通过智能指针管理应用程序的主窗口，且通过 <code>std::unique_ptr</code>独占所管理对象的所有权，保证应用程序运行时只有一个主窗口。</li>
 <li><code>bool m_bRunning</code>：用于控制应用程序的运行状态。</li>
 </ul>
 </li>
 <li><p>Application.cpp</p>
-  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Application* Application::s_Instance = <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">Application::<span class="built_in">Application</span>(<span class="type">int</span>&amp; argc, <span class="type">char</span>** argv)</span><br><span class="line">: <span class="built_in">QApplication</span>(argc, argv)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NEST_CORE_ASSERT</span>(s_Instance != <span class="literal">nullptr</span>, <span class="string">&quot;Application already exists!&quot;</span>);</span><br><span class="line">    s_Instance = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化框架的Log</span></span><br><span class="line">    Nest::Log::<span class="built_in">InitLogger</span>();</span><br><span class="line">    <span class="built_in">NEST_CORE_WARN</span>(<span class="string">&quot;Initialiazed Log!&quot;</span>);</span><br><span class="line">    <span class="built_in">NEST_CORE_INFO</span>(<span class="string">&quot;Hello Nest FrameWork!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Application::Run</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_bRunning = <span class="literal">true</span>;</span><br><span class="line">    m_Window-&gt;<span class="built_in">show</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Application::SetMainWindow</span><span class="params">(QMainWindow* pMainWindow)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_Window = std::<span class="built_in">unique_ptr</span>&lt;QMainWindow&gt;(pMainWindow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Application* Application::s_Instance = <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">Application::<span class="built_in">Application</span>(<span class="type">int</span>&amp; argc, <span class="type">char</span>** argv)</span><br><span class="line">: <span class="built_in">QApplication</span>(argc, argv)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NEST_CORE_ASSERT</span>(s_Instance != <span class="literal">nullptr</span>, <span class="string">&quot;Application already exists!&quot;</span>);</span><br><span class="line">    s_Instance = <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Application::Run</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_bRunning = <span class="literal">true</span>;</span><br><span class="line">    m_Window-&gt;<span class="built_in">show</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Application::SetMainWindow</span><span class="params">(QMainWindow* pMainWindow)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_Window = std::<span class="built_in">unique_ptr</span>&lt;QMainWindow&gt;(pMainWindow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
         
@@ -329,10 +329,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2024/04/05/NestFramework/%E6%A1%86%E6%9E%B6%E7%AF%87%EF%BC%9ANest%20v0.1.0-Log/"
+      title="框架篇：Nest v0.1.0-Log"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        框架篇：Nest v0.1.0-Log
         
     </p>
   </a>
