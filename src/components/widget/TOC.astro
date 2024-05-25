@@ -1,0 +1,22 @@
+---
+import {i18n} from "../../i18n/translation";
+import I18nKey from "../../i18n/i18nKey";
+import {getCategoryUrl, getPostUrlBySlug} from "../../utils/url-utils";
+import WidgetLayout from "./WidgetLayout.astro";
+import ButtonLink from "../control/ButtonLink.astro";
+const toc = Astro.props.toc
+
+// remove if last char is hash
+toc.forEach((item) => {
+    if (item.text[item.text.length - 1] === "#") {
+        item.text = item.text.slice(0, -1);
+    }
+});
+
+---
+
+<WidgetLayout name={"TOC"}>
+    {toc.map((item) => (
+        <ButtonLink url={"#" + item.slug} label={item.text}>{item.text}</ButtonLink>
+    ))}
+</WidgetLayout>
