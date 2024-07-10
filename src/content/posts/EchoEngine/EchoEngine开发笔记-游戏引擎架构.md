@@ -63,4 +63,5 @@ EchoEngine作为一个渲染引擎/游戏引擎项目，在软件设计时应该
 ## 参考
 
 [1] [The Cherno Game Engine Series](https://www.youtube.com/playlist?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT)
+
 [2] 《Game Engine Architecture, Second Edition》 Jason Gregory
