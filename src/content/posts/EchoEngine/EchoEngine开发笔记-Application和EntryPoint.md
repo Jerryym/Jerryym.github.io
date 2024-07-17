@@ -142,10 +142,10 @@ Echo Engine项目创建步骤如下：
 
 `EntryPoint`是程序执行的起始点。在不同的编程语言和框架中，`EntryPoint`的实现方式可能有所不同，但其核心功能是一致的：提供一个明确的入口，让程序从这里开始执行。
 
-* **桌面应用程序中的EntryPoint**
-  在桌面应用程序的开发中，EntryPoint通常与应用程序的主窗口初始化代码紧密相关。以Qt框架为例，QApplication的构造函数和main函数共同构成了程序的EntryPoint。它们负责初始化应用程序，设置必要的参数，并启动事件循环，从而响应用户的交互。
-* **EchoEngine中的EntryPoint**
-  在本项目中，我们采取了将引擎端和客户端分离的设计策略。这种分离不仅有助于提高代码的模块化，还使得维护和扩展变得更加容易。在这种设计下，EntryPoint被定义为应用程序的初始化代码，即main函数的实现。它位于`Echo`项目中，作为启动整个应用程序的起点。
+* **桌面应用程序中的EntryPoint：**
+在桌面应用程序的开发中，EntryPoint通常与应用程序的主窗口初始化代码紧密相关。以Qt框架为例，QApplication的构造函数和main函数共同构成了程序的EntryPoint。它们负责初始化应用程序，设置必要的参数，并启动事件循环，从而响应用户的交互。
+* **EchoEngine中的EntryPoint：**
+在本项目中，我们采取了将引擎端和客户端分离的设计策略。这种分离不仅有助于提高代码的模块化，还使得维护和扩展变得更加容易。在这种设计下，EntryPoint被定义为应用程序的初始化代码，即main函数的实现。它位于`Echo`项目中，作为启动整个应用程序的起点，代码如下。
 
 ```cpp
 extern Echo::Application* Echo::CreateApplication();
@@ -160,3 +160,13 @@ int main(int argc, char** argv)
     return 0;
 }
 ```
+
+最后，我们来运行程序以验证代码的正确性。首先，我们在`SandBox`类的构造函数中添加一行代码`std::cout << "Hello Echo Engine!" << std::endl;`。然后，按下`F5`运行，可以发现`Hello Echo Engine!`成功输出在控制台中。大功告成！
+
+![运行结果](EntryPoint.png)
+
+---
+
+## 总结
+
+随着`Application`和`EntryPoint`的设计完成，EchoEngine项目已经启动啦o(*￣▽￣*)ブ，后续将进行日志模块、MainWindow、GUI、Renderer等相关内容的设计和编码。路漫漫其修远兮，吾将上下而求索。希望自己能脚踏实地地完成每个功能的设计，最终实现本项目的目标！
