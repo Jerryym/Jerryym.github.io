@@ -11,11 +11,12 @@ import rehypeComponents from 'rehype-components' /* Render the custom directive 
 import rehypeKatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive' /* Handle directives */
-import remarkDirectiveRehype from 'remark-directive-rehype' /* Pass directives to rehype */
+import remarkGithubAdmonitionsToDirectives from 'remark-github-admonitions-to-directives'
 import remarkMath from 'remark-math'
 import { AdmonitionComponent } from './src/plugins/rehype-component-admonition.mjs'
 import { GithubCardComponent } from './src/plugins/rehype-component-github-card.mjs'
 import { parseDirectiveNode } from './src/plugins/remark-directive-rehype.js'
+import { remarkExcerpt } from './src/plugins/remark-excerpt.js'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
 
 const oklchToHex = str => {
@@ -30,19 +31,23 @@ const oklchToHex = str => {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jerryym.github.io/',
+  site: 'https://fuwari.vercel.app/',
   base: '/',
   trailingSlash: 'always',
   integrations: [
     tailwind(),
     swup({
       theme: false,
-      animationClass: 'transition-',
-      containers: ['main'],
+      animationClass: 'transition-swup-',   // see https://swup.js.org/options/#animationselector
+                                            // the default value `transition-` cause transition delay
+                                            // when the Tailwind class `transition-all` is used
+      containers: ['main', '#toc'],
       smoothScrolling: true,
       cache: true,
       preload: true,
       accessibility: true,
+      updateHead: true,
+      updateBodyClass: false,
       globalInstance: true,
     }),
     icon({
@@ -53,16 +58,22 @@ export default defineConfig({
         'fa6-solid': ['*'],
       },
     }),
-    Compress({
-      Image: false,
-    }),
     svelte(),
     sitemap(),
+    Compress({
+      CSS: false,
+      Image: false,
+      Action: {
+        Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
+      },
+    }),
   ],
   markdown: {
     remarkPlugins: [
       remarkMath,
       remarkReadingTime,
+      remarkExcerpt,
+      remarkGithubAdmonitionsToDirectives,
       remarkDirective,
       parseDirectiveNode,
     ],
