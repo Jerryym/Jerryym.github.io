@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
   },
   banner: {
     enable: true,
-    src: 'assets/images/June 2024_16.jpg', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src: 'assets/images/April 2024_1.jpg', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
   },
   favicon: [
     //Leave this array empty to use the default favicon
@@ -42,7 +42,7 @@ export const navBarConfig: NavBarConfig = {
 }
 
 export const profileConfig: ProfileConfig = {
-  avatar: 'assets/images/フロストリーフ.jpg', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+  avatar: 'assets/images/Star girl.jpg', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
   name: '_进击のJerry_',
   bio: 'TECH OTAKUS SAVE THE WORLD',
   links: [

@@ -1,5 +1,5 @@
 ---
-title: EchoEngine
+title: EchoEngine v0.2.0
 published: 2024-03-04
 tags: [C++, Render Engine]
 category: EchoEngine
@@ -14,7 +14,7 @@ draft: false
 
 ### Development Environment
 
-*  **IDE**: Visual Studio 2022
+* **IDE**: Visual Studio 2022
 
 ### Dependencies
 
