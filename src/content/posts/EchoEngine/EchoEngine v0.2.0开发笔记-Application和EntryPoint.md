@@ -162,7 +162,7 @@ int main(int argc, char** argv)
 
 最后，我们来运行程序以验证代码的正确性。首先，我们在 `SandBox`类的构造函数中添加一行代码 `std::cout << "Hello Echo Engine!" << std::endl;`。然后，按下 `F5`运行，可以发现 `Hello Echo Engine!`成功输出在控制台中。大功告成！
 
-![运行结果](EntryPoint.png)
+![运行结果](./Application和EntryPoint/EntryPoint.png)
 
 ---
 
