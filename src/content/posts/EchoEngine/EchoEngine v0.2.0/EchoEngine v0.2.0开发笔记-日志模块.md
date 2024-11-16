@@ -91,7 +91,7 @@ draft: false
 
 在EchoEngine中，我将spdlog库作为第三方构件来支撑引擎中的日志模块。
 
-* *使用命令`git submodule add https://github.com/Jerryym/spdlog.git Echo/vendor/spdlog`将spdlog作为子模块添加到Echo Engine项目中，并通过命令`git submodule update --init --recursive`保证子模块被正确初始化和更新。
+* 使用命令`git submodule add https://github.com/Jerryym/spdlog.git Echo/vendor/spdlog`将spdlog作为子模块添加到Echo Engine项目中，并通过命令`git submodule update --init --recursive`保证子模块被正确初始化和更新。
 * 定义了`Log`类用于设计日志模块。在类中，我定义了两个日志对象分别用于管理引擎端日志/核心层日志`s_CoreLogger`和客户端日志`s_ClientLogger`，并定义了相关宏用于简化在使用日志时的代码。
 
 ```c++
