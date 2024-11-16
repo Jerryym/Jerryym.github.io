@@ -7,7 +7,7 @@ tags: [Render Engine]
 category: 'EchoEngine'
 draft: false
 ---
-前几篇介绍了EchoEngine的设计思路，从本篇开始，将记录实际开发过程中的开发要点。本篇将记录EchoEngine的Application和EntryPoint中的开发要点，文中项目文件结构可参考下方项目仓库中的文件结构。
+前几篇介绍了EchoEngine的设计思路，从本篇开始，将记录实际开发过程中的开发要点。本篇将记录EchoEngine的Application和EntryPoint中的开发要点，文中项目文件结构可参考下方项目仓库。
 
 **项目仓库：**
 
@@ -32,18 +32,16 @@ Echo Engine项目创建步骤如下：
 * **GLFW**：是继GLUT之后，当前最新的用来创建和管理OpenGL上下文，以及操作窗口的第三方库。
 
   * 在GitHub上找到GLFW的官方仓库并Fork到自己账号下。
-  * 使用git命令将GLFW作为子模块添加到Echo Engine您的项中
+  * 使用git命令将GLFW作为子模块添加到Echo Engine项目中
 
     ```bash
     git submodule add https://github.com/glfw/glfw.git Echo/vendor/GLFW
     ```
-
   * 运行命令以确保所有子模块被正确初始化和更新
 
     ```bash
     git submodule update --init --recursive
     ```
-
 * **GLAD**：是继GLEW之后，当前最新的用来访问OpenGL规范接口的第三方库，目前支持的最新OpenGL版本是 `4.6`。
 
   * 访问GLAD的官方网站，下载最新版本的源代码。
@@ -92,7 +90,6 @@ Echo Engine项目创建步骤如下：
   // defined in Client 
   Application* CreateApplication();
   ```
-
 * Application.cpp
 
   ```cpp
@@ -108,13 +105,13 @@ Echo Engine项目创建步骤如下：
       m_bRunning = true;
   }
   ```
-
 * SandBoxApp.cpp
 
   :::note
+
   1. 由于 `SandBox`作为作为Echo Engine的客户端项目，其必然要在客户端有一个自己的 `Application`类来管理客户端的相关资源，并且这个 `Application`类也要继承于引擎中的 `Application`。
   2. 在客户端中，需要实现引擎端声明的函数 `Application* CreateApplication();`，此函数的作用是将客户端的 `Application`类的指针传递给引擎端。
-  :::
+     :::
 
   ```cpp
   namespace SandBoxApp {
