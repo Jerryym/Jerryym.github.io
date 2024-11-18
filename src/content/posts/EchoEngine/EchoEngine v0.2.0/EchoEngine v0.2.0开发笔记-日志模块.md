@@ -1,7 +1,7 @@
 ---
 title: EchoEngine v0.2.0开发笔记-日志模块
 published: 2024-11-14
-description: ''
+description: 'EchoEngine v0.2.0开发笔记-日志模块'
 image: ''
 tags: [Render Engine]
 category: 'EchoEngine'
@@ -30,7 +30,8 @@ draft: false
 ### 常用的C++日志库
 
 * [spdlog](https://github.com/gabime/spdlog)
-  * 基于`fmt`的高性能日志库
+
+  * 基于 `fmt`的高性能日志库
   * 支持多线程和异步日志
   * 提供日志级别、文件滚动、时间戳等功能
   * 示例代码:
@@ -44,8 +45,8 @@ draft: false
         return 0;
     }
     ```
-
 * [glog](https://github.com/google/glog)
+
   * 由 Google 提供的日志库
   * 提供分级别日志（INFO, WARNING, ERROR, FATAL）
   * 支持日志文件输出和条件检查（`CHECK` 宏）
@@ -61,8 +62,8 @@ draft: false
         return 0;
     }
     ```
-
 * [Boost.Log](https://github.com/boostorg/log)
+
   * Boost 库中的日志组件
   * 支持多线程和多种日志格式
   * 可高度定制化日志行为
@@ -91,8 +92,8 @@ draft: false
 
 在EchoEngine中，我将spdlog库作为第三方构件来支撑引擎中的日志模块。
 
-* 使用命令`git submodule add https://github.com/Jerryym/spdlog.git Echo/vendor/spdlog`将spdlog作为子模块添加到Echo Engine项目中，并通过命令`git submodule update --init --recursive`保证子模块被正确初始化和更新。
-* 定义了`Log`类用于设计日志模块。在类中，我定义了两个日志对象分别用于管理引擎端日志/核心层日志`s_CoreLogger`和客户端日志`s_ClientLogger`，并定义了相关宏用于简化在使用日志时的代码。
+* 使用命令 `git submodule add https://github.com/Jerryym/spdlog.git Echo/vendor/spdlog`将spdlog作为子模块添加到Echo Engine项目中，并通过命令 `git submodule update --init --recursive`保证子模块被正确初始化和更新。
+* 定义了 `Log`类用于设计日志模块。在类中，我定义了两个日志对象分别用于管理引擎端日志/核心层日志 `s_CoreLogger`和客户端日志 `s_ClientLogger`，并定义了相关宏用于简化在使用日志时的代码。
 
 ```c++
 #pragma once
@@ -168,30 +169,29 @@ namespace Echo {
 
 ```
 
-* 为了实现引擎在运行时能够优先初始化日志系统，我修改了`EntryPoint.h`文件中的代码，在`main`函数一开始添加了初始化日志系统的代码。
+* 为了实现引擎在运行时能够优先初始化日志系统，我修改了 `EntryPoint.h`文件中的代码，在 `main`函数一开始添加了初始化日志系统的代码。
 
-    ``` cpp
-    #pragma once
-    extern Echo::Application* Echo::CreateApplication();
+  ```cpp
+  #pragma once
+  extern Echo::Application* Echo::CreateApplication();
 
-    int main(int argc, char** argv)
-    {
-        //初始化日志系统
-        Echo::Log::Init();
-        ECHO_CORE_WARN("Initialiazed Log!");
-        ECHO_CLIENT_INFO("Hello Echo Engine!");
+  int main(int argc, char** argv)
+  {
+      //初始化日志系统
+      Echo::Log::Init();
+      ECHO_CORE_WARN("Initialiazed Log!");
+      ECHO_CLIENT_INFO("Hello Echo Engine!");
 
-        //创建应用系统
-        auto app = Echo::CreateApplication();
-        app->Run();
-        delete app;
+      //创建应用系统
+      auto app = Echo::CreateApplication();
+      app->Run();
+      delete app;
 
-        return 0;
-    }
-    ```
-
-* **运行测试**：生成`Echo`项目并按下`F5`运行程序，可以看到在控制台中打印出了相关级别的日志信息，大功告成o(*￣▽￣*)ブ
-![日志模块测试](./日志模块/Log模块测试.png)
+      return 0;
+  }
+  ```
+* **运行测试**：生成 `Echo`项目并按下 `F5`运行程序，可以看到在控制台中打印出了相关级别的日志信息，大功告成o(*￣▽￣*)ブ
+  ![日志模块测试](./日志模块/Log模块测试.png)
 
 ---
 

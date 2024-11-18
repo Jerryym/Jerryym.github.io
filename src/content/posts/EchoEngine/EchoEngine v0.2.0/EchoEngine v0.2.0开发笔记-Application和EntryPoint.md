@@ -1,7 +1,7 @@
 ---
 title: EchoEngine v0.2.0开发笔记-Application和EntryPoint
 published: 2024-07-16
-description: ''
+description: 'EchoEngine v0.2.0开发笔记-Application和EntryPoint'
 image: ''
 tags: [Render Engine]
 category: 'EchoEngine'
