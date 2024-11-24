@@ -40,7 +40,6 @@ lang: ''
 
     #### Qt中的Application
 
-
     1. 在Qt中，一共有三种Application：`QCoreApplication`、`QGuiApplication`和 `QApplication`
     2. 三种Application类之间的关系如图所示
        ![Qt中三种Application类之间的关系](QApplication类图.png)
@@ -48,7 +47,7 @@ lang: ''
        1. `QCoreApplication`定义在 `core`模块中，为应用程序提供了一个非gui的事件循环。
        2. `QGuiApplication`定义在 `gui`模块中，提供了额外的gui相关的设置，比如桌面设置，风格，字体，调色板，剪切板，光标。
        3. `QApplication`定义在 `widgets`模块中，是QWidget相关的，能设置双击间隔，按键间隔，拖拽距离和时间，滚轮滚动行数等，能获取桌面，激活的窗口，模式控件，弹跳控件等。
-          :::
+    :::
 * **实现**
 
   结合上述的设计思路进行具体的代码实现：
@@ -63,7 +62,6 @@ lang: ''
     #### C++智能指针
 
     C++标注库中提供了三种常用的智能指针(**使用时请添加头文件 `#include <memory>`**)：`std::unique_ptr`、`std::shared_ptr`和 `std::weak_ptr`。利用智能指针管理原始指针，可以帮助我们在开发过程中减少内存泄漏，空指针和重复释放等问题的发生。
-
 
     * `std::unique_ptr`
       * `std::unique_ptr`是智能指针中最严格的指针，负责管理动态分配的内存，并且保证同一时刻只有一个 `unique_ptr`拥有该内存的所有权。`std::unique_ptr`**不允许复制**，但可以转移所有权（通过 `std::move`）。一旦 `std::unique_ptr`超出作用域，它会自动释放资源，避免内存泄漏。
@@ -83,7 +81,7 @@ lang: ''
         * 不增加引用计数
         * 用来解决 `std::shared_ptr`之间的循环引用问题
         * 可以安全地转换为 `std::shared_ptr`
-          :::
+    :::
 * **代码**
 
 ```c++
@@ -165,7 +163,6 @@ namespace NestApp {
     :::tip
 
     #### 日志级别一般分为以下几种（从高到低排序）
-
 
     * **FATAL（致命）**： FATAL级别的日志用于记录严重的错误，通常表示应用程序遇到了无法继续运行的情况，可能会导致应用程序崩溃。这些日志级别用于标识需要立即处理的严重问题。
     * **ERROR（错误）**：ERROR级别的日志用于记录错误情况，例如操作失败、异常抛出等。这些日志表明应用程序遇到了一些问题，但通常不会导致应用程序崩溃。ERROR级别的日志在生产环境中非常重要，以及时发现和修复错误。
@@ -252,6 +249,8 @@ namespace NestApp {
   }
 
   ```
+
+---
 
 ## 测试
 
