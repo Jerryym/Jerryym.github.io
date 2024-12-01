@@ -34,7 +34,7 @@ lang: ''
 * **集成SARibbon**
   
   在NestUI中，我将[SARibbon](https://github.com/czyt1988/SARibbon)库作为第三方构件来支撑框架中的UI。
-  * 使用命令`git submodule add https://github.com/Jerryym/SARibbon.git NestUI/vendor/SARibbon`将spdlog作为子模块添加到Echo Engine项目中，并通过命令`git submodule update --init --recursive`保证子模块被正确初始化和更新
+  * 使用命令`git submodule add https://github.com/Jerryym/SARibbon.git NestUI/vendor/SARibbon`将SARibbon作为子模块添加到NestUI项目中，并通过命令`git submodule update --init --recursive`保证子模块被正确初始化和更新
 
 ### MainWindow
 
