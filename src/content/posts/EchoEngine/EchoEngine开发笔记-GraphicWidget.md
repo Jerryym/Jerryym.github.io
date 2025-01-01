@@ -120,6 +120,17 @@ namespace EchoEditor {
         ECHO_CORE_ASSERT(iStatus, "Failed to initiazlize Glad!");
         //设置垂直同步
         glfwSwapInterval(1);
+
+        #if defined(_WIN32)// Windows: Use glfwGetWin32Window
+            QWindow* pGLFWWindow = QWindow::fromWinId((WId)glfwGetWin32Window(m_pWindow));
+        #else
+            ECHO_CORE_ASSERT(false, "Unsupported platform for embedding GLFW window.");
+        #endif
+        //将GLFW嵌入到GraphicWidget中
+        QVBoxLayout* layout = new QVBoxLayout();
+        QWidget* container = QWidget::createWindowContainer(pGLFWWindow, this);
+        layout->addWidget(container);
+        setLayout(layout);
     }
 
 }
