@@ -106,10 +106,10 @@ namespace EchoEditor {
     {
         if (!s_bGLFWInitialiazed)
         {
-        // glfwTerminate on system shutdown
-        int success = glfwInit();
-        ECHO_CORE_ASSERT(success, "Could not intialiaz GLFW!");
-        s_bGLFWInitialiazed = true;
+            // glfwTerminate on system shutdown
+            int success = glfwInit();
+            ECHO_CORE_ASSERT(success, "Could not intialiaz GLFW!");
+            s_bGLFWInitialiazed = true;
         }
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         m_pWindow = glfwCreateWindow(width(), height(), "EchoEngine", nullptr, nullptr);
