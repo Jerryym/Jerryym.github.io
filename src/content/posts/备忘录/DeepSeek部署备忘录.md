@@ -57,7 +57,11 @@ Ollama是一个开源工具，专门用于在本地运行、管理和部署大�
 
 下载DeepSeek R1模型有两种方法：一种是使用Ollama拉取的操作直接下载模型，另一种是从HuggingFace、modelscope等模型网站上下载GGUF格式模型，然后使用ollama进行模型构建。
 
-#### 方式一：使用Ollama拉取的操作进行模型下载
+:::important
+经过测试发现，gguf模型运行时回答存在问题，但直接通过ollama下载官方模型运行则无问题。**因此建议使用Ollama拉取的操作进行下载**。
+:::
+
+#### 方式一：使用Ollama拉取的操作进行模型下载(⭐推荐)
 
 * 访问Ollama官方的模型库中的[DeepSeek-R1](https://ollama.com/library/deepseek-r1)，根据本地硬件条件选择合适的版本(**Note: 下方表格内容源于网络**)。
 
@@ -88,7 +92,7 @@ Ollama是一个开源工具，专门用于在本地运行、管理和部署大�
 
 * 启动模型：`ollama run deepseek-r1:14b`
 
-#### 方式二：在HuggingFace上下载GGUF格式的模型(⭐推荐)
+#### 方式二：在HuggingFace上下载GGUF格式的模型
 
 * DeepSeek-R1官方模型地址：[DeepSeek-R1](https://huggingface.co/deepseek-ai/DeepSeek-R1)
 ![modelList](./DeepSeek部署备忘录/modelList.png)
