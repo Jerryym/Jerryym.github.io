@@ -155,7 +155,3 @@ int main(int argc, char** argv)
 ![Console](./Application和EntryPoint/Console.png)
 
 由图中可以看到，相关Log信息已经正常输出。
-
----
-
-## References
